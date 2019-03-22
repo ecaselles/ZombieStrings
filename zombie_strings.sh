@@ -5,7 +5,7 @@ if [[ $1 ]]; then
   rootFolder=$1
 fi
 
-allLocalisableFiles=$(find $rootFolder -type f -name "*.strings");
+allLocalisableFiles=$(find $rootFolder -type f -name "*.strings" | grep -v /Pods/);
 for localisableFile in $allLocalisableFiles; do
   echo -e "\n🔎  Inspecting:" $localisableFile
 
